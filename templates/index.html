@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Delay Prediction</title>
+</head>
+<body>
+    <h1>Delay Prediction</h1>
+    <form method="POST">
+        <label for="number_of_workers">Number of Workers:</label>
+        <input type="text" name="number_of_workers" id="number_of_workers"  required><br><br>
+
+        <label for="budget_allocated">Budget allocated:</label>
+        <input type="text" name="budget_allocated" id="budget_allocated"  required><br><br>
+
+        <label for="availability_of_resources">Availability of Resources:</label>
+        <input type="text" name="availability_of_resources" id="availability_of_resources" required><br><br>
+        
+        <label for="weather_condition">Weather Condition:</label>
+        <select name="weather_condition" id="weather_condition">
+            <option value="good">Good</option>
+            <option value="fair">Fair</option>
+            <option value="poor">Poor</option>
+        </select><br><br>
+        
+        <label for="location">Location:</label>
+        <select name="location" id="location">
+            <option value="urban">Urban</option>
+            <option value="suburban">Suburban</option>
+            <option value="rural">Rural</option>
+        </select><br><br>
+        
+        
+        <label for="estimated_completion_time">Estimated completion time:</label>
+        <input type="text" name="estimated_completion_time" id="estimated_completion_time"  required><br><br>
+
+        <label for="delay_in_inspections">Delay in inspections:</label>
+        <input type="text" name="delay_in_inspections" id="delay_in_inspections"  required><br><br>
+
+        <label for="delay_in_material_approval">Delay in material approval:</label>
+        <input type="text" name="delay_in_material_approval" id="delay_in_material_approval"  required><br><br><br><br>
+
+        <label for="shortage_of_laborers">Shortage of laborers:</label>
+        <input type="text" name="shortage_of_laborers" id="shortage_of_laborers"  required><br><br><br><br>
+
+        <label for="inadequate_equipment">Inadequate equipment:</label>
+        <input type="text" name="inadequate_equipment" id="inadequate_equipment"  required><br><br><br><br>
+        
+        <input type="submit" value="Predict">
+    </form>
+    
+    {% if prediction %}
+    <h2>Predicted Delay in Days:</h2>
+    <p>{{ prediction }}</p>
+    
+    {% endif %}
+</body>
+</html>
